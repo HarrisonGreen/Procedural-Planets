@@ -7,7 +7,7 @@ from perlin_noise import composite_perlin
 
 def get_params():
     # mesh parameters
-    mesh_dim = 200
+    mesh_dim = 600
 
     # noise generation parameters
     octaves = 6
@@ -54,7 +54,7 @@ def plotly_draw(mesh_faces, colour, sea_faces, sea_level):
     for i in range(len(mesh_faces)):
         fig.add_trace(go.Surface(x = mesh_faces[i][0], y = mesh_faces[i][1], z = mesh_faces[i][2],
                                  surfacecolor = colour[i], cmin = 0, cmax = 1, colorscale = cs,
-                                 lighting = {"roughness": 0.25}))
+                                 lighting = {"roughness": 0.3}))
         fig.add_trace(go.Surface(x = sea_faces[i][0], y = sea_faces[i][1], z = sea_faces[i][2],
                                  surfacecolor = colour[i], cmin = 0, cmax = 1, colorscale = cs,
                                  lighting = {"roughness": 0.1}))
