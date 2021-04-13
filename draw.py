@@ -7,11 +7,11 @@ from perlin_noise import composite_perlin
 
 def get_params():
     # mesh parameters
-    mesh_dim = 600
+    mesh_dim = 600 # Decrease this if it is taking too long
 
     # noise generation parameters
-    octaves = 6
-    base_freq = 5
+    octaves = 6 # Too large will give errors
+    base_freq = 5 # Too large will give errors
     freq_ratio = 2
     decay = 0.4
 
@@ -43,7 +43,8 @@ def generate_planet(mesh_dim, octaves, base_freq, freq_ratio, decay, damp, power
     return mesh_faces, colour, sea_faces
 
 def plotly_draw(mesh_faces, colour, sea_faces, sea_level):
-    # Choose colour map (curl, ice, purpor_r, icefire, electric, cmap.random)
+    # Choose colour map (curl, ice, purpor_r, icefire and electric are all good)
+    # Can also choose cmap.random for a random one or any other plotly colorscale
     cs = "electric"
 
     # Plot planet
